@@ -1,0 +1,18 @@
+h1, h2{
+    color: rgb(115, 67, 160);
+}
+
+#signupform{
+    background-color: rgb(171, 185, 235);
+}
+#groupsofar{
+    background-color: rgb(236, 199, 219);
+}
+.SN:hover{
+    font-weight: 800;
+
+}
+
+.outbutton{
+    background-color: bisque;
+}
