@@ -1,6 +1,20 @@
-h1, h2{
+/* #titles{
+    /* 查询margin border的区别 */
+    /* width: 800px;
+    margin: auto;
+
+    text-align: center;
+
     color: rgb(67, 160, 121);
-}
+    background-color: aliceblue;
+} */ 
+
+
+/* #titles{
+    display: flex;
+    justify-content: center;
+
+} */
 
 #signupform{
     background-color: rgb(171, 185, 235);
@@ -13,6 +27,30 @@ h1, h2{
 
 }
 
-.outbutton{
+/* .outbutton{
     background-color: bisque;
+} */
+
+label{
+    color:orange;
+}
+
+form:hover{
+    color:green;
+}
+
+/* #submitbtn{
+    background-color: rgb(184, 184, 208);
+    position:relative;
+    left: 20px;
+    bottom: 5px;
+    /* top: 10px; */
+} */
+
+#submitbtn{
+    background-color: rgb(184, 184, 208);
+    position:absolute;
+    left: 200px;
+    bottom: 50px;
+    /* top: 10px; */
 }

@@ -1,87 +1,125 @@
-#测试测试测试！！！！
 
 <html>
     <head>
-        <link rel="stylesheet" href="lab_w2.css">
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         
+        <link rel="stylesheet" href="lab_w2.css">
+        <script src="test.js">
+        // <script>
+        //     function sayhi(){
+        //         alert("Hi2");  
+        //     }
+            
+        </script>
+      
+
     </head>
 
     <body>
-        <div id="signupform">
-            <h1> Group project sign-up page</h1>
-            <h2>Sign up</h2>
-            <p> Enter your student number here: </p>
+        <div class="container">
+            <div id="titles">
+                <h1> Group project sign-up page</h1>
+                <h2>Sign up</h2>
+            </div>
+            
+            <div id="signupform">
+                
+                <p> Enter your student number here: </p>
 
-            <form action="/submitGroup">
-                <lable for="NOS">Number of members so far: </lable>
-                <select name="NOS" id="NOS">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>         
-                </select>
+                <form action="/submitGroup">
+                    <lable for="NOS">Number of members so far: </lable>
+                    <select name="NOS" id="NOS">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>         
+                    </select>
 
-                <br>
+                    <br>
 
-                <label for="Student1">Student 1: </label>
-                <input type="number" id="Student1" > 
-                <br>
-                <label for="Student2">Student2: </label>
-                <input type="number" id="Student2" > 
-                <br>
-                <label for="Student3">Student 3: </label>
-                <input type="number" id="Student3" > 
-                <br>
-                <label for="Student4">Student 4: </label>
-                <input type="number" id="Student4" > 
-                <br>
+                    <label for="Student1">Student 1: </label>
+                    <input type="number" id="Student1" > 
+                    <br>
+                    <label for="Student2">Student2: </label>
+                    <input type="number" id="Student2" > 
+                    <br>
+                    <label for="Student3">Student 3: </label>
+                    <input type="number" id="Student3" > 
+                    <br>
+                    <label for="Student4">Student 4: </label>
+                    <input type="number" id="Student4" > 
+                    <br>
 
-                <input type="submit" class="outbutton">
+                    <input class= "btn btn-danger" id="submitbtn" type="submit">
+                    <!-- 插入bss图标 -->
+                    
 
 
-            </form>
+                </form>
 
+            </div>
 
-        </div>
+    <!-- 
+    在你提供的 HTML 代码中，#submitbtn 元素是位于 <form> 元素内部的，因此 <form> 元素是 #submitbtn 的直接父元素。
+    但是在 HTML 结构中，<form> 元素的祖先元素是 <div id="signupform">。 -->
 
-        <div id="groupsofar">
-            <h2>Existing Group </h2>
-            <table>
-                <tr>
-                    <th>Group ID</th>
-                    <th>Student 1</th>
-                    <th>Student 2</th>
-                    <th>Student 3</th>
-                    <th>Student 4</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <!-- #在给表格单元格中的文本添加 <span> 元素时，通常是为了对文本的某一部分进行样式设置或者添加特定的样式类。 -->
-                    <td><span class="SN">Bob</span> 123</td>
-                    <td><span class="SN">Amy</span> 124</td>
-                    <td><span class="SN">Coco</span> 125</td>
-                    <td><span class="SN">Divid</span> 126</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td><span class="SN">Tom</span> 234</td>
-                    <td><span class="SN">Jim</span> 235</td>
-                    <td><span class="SN">Cardi</span> 236</td>
-                    <td><span class="SN">Taylor</span> 237</td>
-                </tr>
-            </table>
+            <div id="groupsofar">
+                <h2>Existing Group </h2>
+                <table>
+                    <tr>
+                        <th>Group ID</th>
+                        <th>Student 1</th> 
+                        <th>Student 2</th>
+                        <th>Student 3</th>
+                        <th>Student 4</th>
+                    </tr>
+                    <tr>
+                        <td>0</td>
+                        <!-- #在给表格单元格中的文本添加 <span> 元素时，通常是为了对文本的某一部分进行样式设置或者添加特定的样式类。 -->
+                        <td><span class="SN">Bob</span> 123</td>
+                        <td><span class="SN">Amy</span> 124</td>
+                        <td><span class="SN">Coco</span> 125</td>
+                        <td><span class="SN">Divid</span> 126</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="SN">Tom</span> 234</td>
+                        <td><span class="SN">Jim</span> 235</td>
+                        <td><span class="SN">Cardi</span> 236</td>
+                        <td><span class="SN">Taylor</span> 237</td>
+                    </tr>
+                </table>
 
-            Kick out:
-            <button class="SN outbutton">
-                Tom
-            </button>
-        </div>
+                Kick out:
+                <!-- inline javascript:  -->
+                <!-- <button class= "SN_outbutton" onclick="alert('Hi')"> -->
+                    
+                <!-- 调用函数的onclick javascript: -->
+                <button class= "SN_outbutton" onclick="es()">  
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Eject
+                </button>
+
+            </div>
+            <!-- <button class="SN outbutton"> -->
         
 
-        
+        </div>
     </body>
 
+    <!-- <script>
+        alert("Hi2");
+    </script> -->
+
+  
 
 
 
 </html>
+
+
+<!-- .btn-danger	Red button. Indicates danger or a negative action
+插入bss链接之后 加在button 后面的class 中
+
+-->
