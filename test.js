@@ -38,3 +38,7 @@ function ds() {
 
 // alert(5);
 // factorial(5);
+
+function removestudent() {
+    // 新增到feature 2
+}

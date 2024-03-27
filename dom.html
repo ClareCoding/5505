@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=2.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+
+        body {
+            margin: 10px;
+        }
+
+        div {
+            width: 100px;
+            height: 100px;
+            border: 1px dashed #ccc;
+            margin-bottom: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-top: 200px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+
+        .changestyle {
+            width: 200px;
+            height: 150px;
+            background-color: aqua;
+        }
+
+        .bold-text {
+            font-size: 30px;
+            font-weight: 600;
+
+        }
+
+
+        #carousel li {
+            width: 200px;
+            line-height: 200px;
+            position: absolute;
+            text-align: center;
+            text-shadow: 0 0 5px #000;
+            font-size: 35px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 1s;
+
+        }
+
+        #carousel li:nth-child(1) {
+            background-color: green;
+
+        }
+        #carousel li:nth-child(2) {
+            background-color: brown;
+
+        }
+        #carousel li:nth-child(3) {
+            background-color: orange;
+
+        }
+        #carousel li:nth-child(4) {
+            background-color: purple;
+
+        }
+
+        #carousel li.active {
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="block"> default content</div> 
+    <ul id="carousel">
+        <li class="active">iphone</li>
+        <li>ipad</li>
+        <li>iMac</li>
+        <li>iTV</li>
+    </ul>
+
+    <button id="prev">before</button>
+    <button id="next">after</button>
+
+
+    <!-- <p class="text1">default content 1</p class="text1">
+    <p class="text1">test content </p class="text1">
+    <p class="text1">default content 1</p class="text1">
+    <p class="text1">default content 1</p class="text1">
+
+
+    <div id="container">
+
+        <p>default content 2</p>
+        <p class="item">default content 2</p>
+        <p>default content 2</p>
+        <p>default content 2</p>
+
+    </div> -->
+
+
+
+   <script>
+    // var block = document.getElementById("block")
+    // console.log(block)
+    // block.textContent = "modified content"
+
+    // var contents = document.getElementsByTagName('p')
+    // console.log(contents)
+
+    // contents[0].textContent = "modified 2"
+
+
+    // var textArr = [
+    //     "east", "west", "north", "south"
+    // ]
+
+    // for (var i = 0; i < contents.length; i++) {
+    //     // contents[i].textContent = "new contents"
+    //     contents[i].textContent = textArr[i]
+    //     // 根据数据，动态生成网页内容的方法。
+    // }
+
+    // // 各种获取方式：
+    // var newcontents = document.querySelectorAll('.text1')
+    // var newcontents1 = document.querySelectorAll('#container p')
+    // var newcontents2 = document.querySelector('#container .item')
+    // newcontents2.textContent = "hello"
+    
+    // newcontents2.previousElementSibling.textContent = 'fish'
+    // newcontents2.nextElementSibling.textContent = 'cat'
+
+
+    // // 在已经获取了某一个元素之后，可以根据其与其他元素、父级子级的关系，来获取其他元素，操作更加灵活。
+    // var container = newcontents2.parentNode
+    // console.log(container)
+    // container.textContent = 'replaced content'
+
+    // var items = container.children
+    // console.log(items)
+
+        var block = document.querySelector('#block')
+        // block.style.width = '200px';
+        // block.style.height = '150px';
+        // block.style.backgroundColor = 'red';
+
+        // 用内置css的类名来直接更改：
+        // block.className = 'changestyle'
+
+        // 文本处理：
+        // block.textContent= 'formal content<span class="bold-text">加粗文本</span>'
+        // block.innerHTML = 'formal content<span class="bold-text">加粗文本</span>';
+
+        // 事件处理
+        // block.onclick = function(){
+        //     alert('surprise')
+        // }
+
+        // 这样的方式可以让后来的弹出窗口 不出现互相覆盖的情况，第一个点了ok关闭之后，直接自动跳出来第二个
+        // block.addEventListener('click', function(){
+        //     alert('hi')
+        // })
+        // block.addEventListener('click', function(){
+        //     alert('hi again')
+        // })
+
+
+
+        // 轮播图片
+
+        var carousel = document.querySelector('#carousel')
+        var items = carousel.children
+        console.log(items)
+        var prevbtn = document.querySelector('#prev')
+        var nextbtn = document.querySelector('#next')
+
+        var index = 0
+        nextbtn.addEventListener('click', function() {
+            items[index].className = ''
+
+            // index 加到最后一张就不行了
+            if (index === items.length -1) {
+                index = -1
+                // 不能设置为0，因为if结束之后，index直接++，相当于items【0】就不被处理了
+            }
+
+            index++
+            items[index].className = 'active'
+        })
+
+        prevbtn.addEventListener('click', function() {
+            items[index].className = ''
+
+            // index 加到最后一张就不行了
+            if (index === 0) {
+                index = items.length
+                // 不能设置为length-1，因为if结束之后，index直接-1，相当于items【最后一个】就不被处理了
+            }
+
+            index -= 1
+            items[index].className = 'active'
+        })
+
+        // 定时器
+        // 延时定时器，延迟指定时间后执行：
+        // setTimeout(function() {
+        //     alert('surprise!')
+        // },
+        // 2000)
+        // 2000毫秒，2s
+
+        // 
+        var timer = setInterval(function() {
+            console.log("间隔两秒出现一次")
+        }, 2000);
+
+        setTimeout(function(){
+            clearInterval(timer)   
+        }, 6000);
+
+
+        setInterval(function() {
+            items[index].className = ''
+
+            // index 加到最后一张就不行了
+            if (index === items.length -1) {
+                index = -1
+                // 不能设置为0，因为if结束之后，index直接++，相当于items【0】就不被处理了
+            }
+
+            index++
+            items[index].className = 'active'
+        }, 1500)
+
+
+
+
+
+
+
+   </script>
+</body>
+</html>
